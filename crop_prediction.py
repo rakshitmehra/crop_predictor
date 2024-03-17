@@ -98,4 +98,4 @@ if selected == 'Crops Predictor':
             except requests.exceptions.ConnectionError:
                 st.error("Error: Unable to connect to the server. Please make sure the server is running.")
         except ValueError:
-            st.error("Invalid input. Please provide valid numeric values for all features.")
+            st.error("Error: Please enter valid input values.")

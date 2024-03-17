@@ -65,7 +65,7 @@ def predict():
             Region = Regions.get(crop, 'No specific regions available.')
         else:
             crop = 'Soil is not fit for growing crops',
-            # Region = 'none'
+            Region = 'none'
         
         response = {
             "prediction": crop,
