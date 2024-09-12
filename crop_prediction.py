@@ -56,13 +56,13 @@ if selected == 'Crops Predictor':
             
             print("Input features:", input_features)
             
-            if float(moisture) < 20:
-                st.warning("⚠️⚠️LOW WATER LEVEL IN YOUR SOIL⚠️⚠️")
+            # if float(moisture) < 20:
+            #     st.warning("⚠️⚠️LOW WATER LEVEL IN YOUR SOIL⚠️⚠️")
                 
-                client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
-                farmer_phone_number = '+918567098852'
-                message = f"Attention: ⚠️⚠️LOW WATER LEVEL IN YOUR SOIL⚠️⚠️"
-                client.messages.create(body=message, from_=TWILIO_PHONE_NUMBER, to=farmer_phone_number)
+            #     client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
+            #     farmer_phone_number = '+918567098852'
+            #     message = f"Attention: ⚠️⚠️LOW WATER LEVEL IN YOUR SOIL⚠️⚠️"
+            #     client.messages.create(body=message, from_=TWILIO_PHONE_NUMBER, to=farmer_phone_number)
             
             try:
                 response = requests.post(FLASK_API_URL, json=input_features)
@@ -85,10 +85,10 @@ if selected == 'Crops Predictor':
                     )
                     
                     # Send SMS using Twilio
-                    client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
-                    farmer_phone_number = '+918567098852'
-                    message = f"Soil is suitable for growing {crop}.\n\nDetails: {Region}.\n\nThank you for using our crop predictor."
-                    client.messages.create(body=message, from_=TWILIO_PHONE_NUMBER, to=farmer_phone_number)
+                    # client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
+                    # farmer_phone_number = '+918567098852'
+                    # message = f"Soil is suitable for growing {crop}.\n\nDetails: {Region}.\n\nThank you for using our crop predictor."
+                    # client.messages.create(body=message, from_=TWILIO_PHONE_NUMBER, to=farmer_phone_number)
 
                     # st.write('<div style="background-color: black; padding: 15px; border-radius: 5px; color: white; font-size: 20px;">'
                     #         '<strong>SMS sent to Farmer\'s phone number</strong>'

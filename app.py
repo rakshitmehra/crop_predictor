@@ -2,8 +2,10 @@ from flask import Flask, request, jsonify
 import joblib
 
 # Load the model
+model = None
 try:
     model = joblib.load('./SavedModels/crop.joblib')
+    print("Model loaded successfully.")
 except Exception as e:
     print(f"Error loading the model: {e}")
 
